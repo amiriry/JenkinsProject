@@ -3,13 +3,6 @@ pipeline {
   stages {
     stage('echo') {
       steps {
-			parameters([
-					string(
-						defaultValue: 'kaki',
-						description: 'my param',
-						name: 'MYPARAM'
-					)
-			])
         echo 'hello'
       }
     }
