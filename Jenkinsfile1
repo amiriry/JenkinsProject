@@ -2,13 +2,15 @@ pipeline {
   agent any
   stages {
 	 stage('get info') {
-		def triggerCause = currentBuild.getBuildCauses()[0]._class
+		steps {
+		  def triggerCause = currentBuild.getBuildCauses()[0]._class
+		  echo "trigger cause - $triggerCause"
+		}
 	 }
     stage('echo') {
       steps {
         echo 'hello'
 		  echo "$check - this is a parameter"
-		  echo "trigger cause - $triggerCause"
       }
     }
 
